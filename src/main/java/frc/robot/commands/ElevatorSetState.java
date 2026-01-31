@@ -9,9 +9,9 @@ public class ElevatorSetState extends InstantCommand {
     public ElevatorState elevatorState;
     // WRITE THE COMMAND
     // Don't forget addRequirements(...) in your constructor
-    public ElevatorSetState(ElevatorState elevatorState) {
+    public ElevatorSetState(ElevatorState state) {
         elevator = Elevator.getInstance();
-        elevator.setState(elevatorState);
+        elevator.setState(state);
 
         addRequirements(elevator);
     }

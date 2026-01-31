@@ -56,9 +56,9 @@ public class ElevatorSimu extends Elevator {
         setpoint = profile.calculate(0.020, setpoint, goal);
         
         // did u forget something??? GO CHECK ARMSIM U DONUT
-
         double voltage = controller.calculate(sim.getPositionMeters(), setpoint.position);
         sim.setInputVoltage(voltage);
+        sim.update(0.02);
         SmartDashboard.putNumber("Elevator/voltage", voltage);
 
         // LOG THE CURRENT HEIGHT OF THE ELEVATOR

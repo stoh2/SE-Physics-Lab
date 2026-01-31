@@ -10,9 +10,9 @@ public class Settings {
         // PID TUNE!!!!!!
 
         public interface PID {
-            double kP = 1.0;
+            double kP = 0.346;
             double kI = 0.0;
-            double kD = 0.0;
+            double kD = 0.1;
         }
     } 
 
@@ -25,9 +25,9 @@ public class Settings {
         // PID TUNE!!!!!!
 
         public interface PID {
-            double kP = 1.0;
+            double kP = 33.66;
             double kI = 0.0;
-            double kD = 0.0;
+            double kD = 0.75;
         }
 
         double MASS_KG = 2.0;
