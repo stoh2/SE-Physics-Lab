@@ -2,7 +2,7 @@ package frc.robot.subsystems.elevator;
 
 import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj.util.Color8Bit;
-
+import frc.robot.subsystems.elevator.Elevator.ElevatorState;
 import edu.wpi.first.wpilibj.smartdashboard.Mechanism2d;
 import edu.wpi.first.wpilibj.smartdashboard.MechanismLigament2d;
 import edu.wpi.first.wpilibj.smartdashboard.MechanismRoot2d;
@@ -44,7 +44,7 @@ public class ElevatorVisualizer {
     
     public void update(double elevatorHeight) {
         // UPDATE THE POSITION OF THE ELEVATOR MECHANISM ROOT
-        e; // error to make you look at ts 
+        elevator.setPosition(8,elevatorHeight); // error to make you look at ts 
 
         SmartDashboard.putData("Visualizers/Elevator", canvas);
     }

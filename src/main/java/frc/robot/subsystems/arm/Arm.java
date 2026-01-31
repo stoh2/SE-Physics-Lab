@@ -12,9 +12,17 @@ public class Arm extends SubsystemBase {
     // What is a singleton you may ask? 
     // It is the part where you create the static instance of your class...
     // Make sure to instantiate to ArmSim()
+    private static final Arm instance;
+
+    static {
+        instance = new ArmSim();
+    }
 
     public enum ArmState {
-        ONE(Rotation2d.kZero);
+        ONE(Rotation2d.kZero),
+        TWO(Settings.Arm.MIN_ANGLE),
+        THREE(Settings.Arm.MAX_ANGLE),
+        FOUR(new Rotation2d((Settings.Arm.MIN_ANGLE.getRadians() + Settings.Arm.MAX_ANGLE.getRadians())/2));
         // WRITE 3 MORE ARM STATES: TWO THREE FOUR
 
         private Rotation2d targetAngle;
@@ -44,6 +52,10 @@ public class Arm extends SubsystemBase {
 
     public void periodic() {
         SmartDashboard.putString("Arm/state", getState().name());
+    }
+
+    public static Arm getInstance() {
+        return instance;
     }
     
 }

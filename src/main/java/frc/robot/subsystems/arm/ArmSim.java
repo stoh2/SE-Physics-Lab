@@ -61,8 +61,7 @@ public class ArmSim extends Arm {
         setpoint = profile.calculate(0.020, setpoint, goal);
 
         // USE THE PID CONTROLLER TO CALCULATE THE VOLTAGE TO REACH THE TARGET ANGLE
-        // double voltage = 
-
+        double voltage = controller.calculate(sim.getAngleRads() * (180/Math.PI),getState().getTargetAngle().getDegrees());
         sim.setInputVoltage(voltage);
         sim.update(0.02);
         
@@ -71,6 +70,7 @@ public class ArmSim extends Arm {
         SmartDashboard.putNumber("Arm/voltage", voltage);
 
         // UPDATE THE ANGLE OF THE ARM VISUALIZER
+        visualizer.updateArmAngle(new Rotation2d(sim.getAngleRads()));
     }
 
 }

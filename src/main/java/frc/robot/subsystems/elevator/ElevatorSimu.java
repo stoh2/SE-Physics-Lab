@@ -62,10 +62,10 @@ public class ElevatorSimu extends Elevator {
         SmartDashboard.putNumber("Elevator/voltage", voltage);
 
         // LOG THE CURRENT HEIGHT OF THE ELEVATOR
-
+        SmartDashboard.putNumber("Elevator/CurrentHeight", sim.getPositionMeters());
         // UPDATE THE ELEVATOR VISUALIZER
 
-
+        visualizer.update(sim.getPositionMeters());
         
     }
 }
